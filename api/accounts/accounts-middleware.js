@@ -5,7 +5,7 @@ exports.checkAccountPayload = (req, res, next) => {};
 exports.checkAccountNameUnique = (req, res, next) => {};
 
 exports.checkAccountId = (req, res, next) => {
-  Account.get(req.params.id)
+  Account.getById(req.params.id)
     .then((account) => {
       if (!account) {
         res.status(404).json({
